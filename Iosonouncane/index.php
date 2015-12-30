@@ -1,0 +1,37 @@
+<?php
+define('ROOT',dirname(__FILE__));
+define('DS',DIRECTORY_SEPARATOR);
+$param = 'frontend';
+
+require_once ROOT.DS."models".DS."user_model.php";
+require_once ROOT.DS."controllers".DS."user_controller.php";
+@$op = $_REQUEST['op'];
+
+$user_controller = new UserController();
+switch ($op) {
+    case 'login':
+        $username = $_POST['user'];
+        $password = $_POST['pass'];
+        
+        if($user_controller->login($username, $password)){
+            header("Location:admin.php");
+        } else header ("Location:login.php?err=1");
+    break;
+    case 'logout':
+        $user_controller->logout();
+        header("Location:login.php");
+    break;
+}
+
+require_once ROOT.DS."views".DS."frontend".DS."view_content.php"; // vista contenuto con dati sui meta key etc.
+
+require_once ROOT.DS."config".DS."db.php";
+
+require_once ROOT.DS."views".DS."frontend".DS."blocks".DS."head.php";
+
+require_once ROOT.DS."views".DS."frontend".DS."view_menu.php";
+
+echo (isset($content)) ? $content : ''; // mandiamo in output il contenuto se e presente
+
+require_once ROOT.DS."views".DS."frontend".DS."blocks".DS."footer.php";
+?>

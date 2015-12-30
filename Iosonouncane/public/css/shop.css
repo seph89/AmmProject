@@ -1,0 +1,13 @@
+#shop {
+    font-family: Verdana,Helvetica, sans-serif;
+    font-style: italic;
+    background-color: #FFCA6F;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 30px;
+    width: 450px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;  
+}
+
