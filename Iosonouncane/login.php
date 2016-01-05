@@ -10,7 +10,7 @@ if(isset($_SESSION['user'])) header("Location:admin.php");
 </head>
 <body>
     <div id="login-controls">
-        <a href="index.php">Home Page<br /></a>
+        <a href="http://spano.sc.unica.it/amm2015/scanuAndrea/Iosonouncane/index.php">Home Page<br /></a>
         <h2>Login</h2>
         <!--mostra un messaggio di errore -->
         <?php if(@$_GET['err'] == 1) { ?>

@@ -7,7 +7,7 @@
     </head>
     <body>
        <div id="shop">
-           <a href="index.php">Home Page<br /><br /></a>
+           <a href="http://spano.sc.unica.it/amm2015/scanuAndrea/Iosonouncane/index.php">Home Page<br /><br /></a>
            Nel nostro Shop potrai acquistare i CD di Iosonouncane <br />
            e pagarli in sicurezza tramite Paypal!
         <?php products(); ?>

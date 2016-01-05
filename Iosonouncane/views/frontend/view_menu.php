@@ -14,11 +14,11 @@ for($i=0;$i!=$linkNum;$i++){
 
 <header>
 	<nav>
-	<h1><a href="http://localhost/Iosonouncane/index.php" title="HOME" >Iosonouncane</a></h1>
+	<h1><a href="http://spano.sc.unica.it/amm2015/scanuAndrea/Iosonouncane/index.php" title="HOME" >Iosonouncane</a></h1>
 		<ul id="nav">
 			<?=$liMenu;?>
-                    <li><a href="http://localhost/Iosonouncane/carrello.php" title="SHOP">Shop</a></li>
-                    <li><a href="http://localhost/Iosonouncane/login.php" title="LOGIN">LOGIN</a></li>
+                    <li><a href="http://spano.sc.unica.it/amm2015/scanuAndrea/Iosonouncane/carrello.php" title="SHOP">Shop</a></li>
+                    <li><a href="http://spano.sc.unica.it/amm2015/scanuAndrea/Iosonouncane/login.php" title="LOGIN">LOGIN</a></li>
 		</ul>
 	</nav>
 </header>
