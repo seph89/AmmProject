@@ -3,9 +3,9 @@
 
     class Conf{   
         protected $DB_HOST = 'localhost';
-        protected $DB_USER = 'root';
-        protected $DB_PASS = 'davide';
-        protected $DB_NAME = 'mvc';
+        protected $DB_USER = 'scanuAndrea';
+        protected $DB_PASS = 'gazzella3673';
+        protected $DB_NAME = 'amm15_scanuAndrea';
         
         static function debug($item){ //Funzioni di debug
                 echo '<pre>';
