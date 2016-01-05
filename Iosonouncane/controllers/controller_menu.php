@@ -2,6 +2,7 @@
 require_once ROOT.DS."models".DS."module_menu.php";
 require_once ROOT.DS."libraries".DS."FormProcessor".DS."FormProcessor_Menu.php";
 
+
 class ConMenu extends ModMenu {
     
     function __construct($action = null, $id = null){
@@ -16,7 +17,7 @@ class ConMenu extends ModMenu {
         $menu = $this->selectMenu($view_param);
         return $menu;
     }
-    
+    //Permette la creazione di un Menu
     function cCreateMenu($post){
         if(isset($post['submit'])){
             $_SESSION['errors'] = null;
@@ -31,7 +32,8 @@ class ConMenu extends ModMenu {
         return require_once ROOT.DS.'views'.DS.'backend'.DS.'menu'.DS.'form_createNew_tpl.php';
     }
     
-    
+    //Permette di cambiare la Visibilità, 
+    //di modificare, di eliminare un Menu
     function manageMenu($action, $id){
        switch($action){
         case('visibleYes'):

@@ -24,7 +24,7 @@ class Mysqlimproved_Driver {
 	}
 // Metodo per la connessione
 	public function connect($host, $user, $password, $database, $charset, $port = null, $socket = null){
-		// creare la connessione
+		// crea la connessione
 		$this->mysqli = new mysqli($host, $user, $password, $database, $port, $socket);
 		
 		if(mysqli_connect_error()){
@@ -35,7 +35,7 @@ class Mysqlimproved_Driver {
 		
 		return true;
 	}	
-// Per Disconnetterci
+// Per Disconnettere
 	public function disconnect(){
 		$this->mysqli->close();
 		return true;
@@ -57,7 +57,7 @@ class Mysqlimproved_Driver {
 			}
 		}	
 	}
-// Per fettchare , estrare i dati in un Array o Oggetto
+// Per fetchare , estrarre i dati in un Array o Oggetto
 	public function fetch($type = 'object'){
 		switch($type){
 			case 'all_assoc':

@@ -7,6 +7,7 @@ require_once ROOT.DS."models".DS."user_model.php";
 require_once ROOT.DS."controllers".DS."user_controller.php";
 @$op = $_REQUEST['op'];
 
+//Controller di login
 $user_controller = new UserController();
 switch ($op) {
     case 'login':

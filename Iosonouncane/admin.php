@@ -1,7 +1,7 @@
 <?php
 require_once ('controllers/user_controller.php');
 require_once ('models/user_model.php');
-//
+//inizia la sessione
 session_start();
 if(!isset($_SESSION['user'])){
     header("Location:login.php");

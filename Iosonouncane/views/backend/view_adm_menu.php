@@ -2,7 +2,7 @@
 <span class="clearfix"></span>
 <h1 style="margin-left: 70px;"> Gestione Menu</h1>
 <?php
-	// Messaggi di Errore successo per le azioni della gestione
+	// Messaggi di Errore/successo per le azioni della gestione
 	echo (isset($_GET['message'])) ? $_GET['message'] : null ;
 ?>
 
@@ -51,7 +51,7 @@
 			<td><a href="?menu&action=delete&id='.$id.'" class="TableGestioneDel" title="Elimina Menu" onclick="return confirm(\'Volete davvero eliminare il punto menu?\')">DelI</a> Elimina </td>
 		</tr>';
 }
-/*<a href="?menu&action=edit&id='.$id.'" title="'.$title.'">*/       //può servire
+
 ?>
 <?=$liMenu;?>
 </table>

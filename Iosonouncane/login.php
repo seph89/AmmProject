@@ -1,6 +1,7 @@
 <?php
-//redirige l'utente se già loggato
+//Apre la sessione
 session_start();
+//redirige l'utente se già loggato
 if(isset($_SESSION['user'])) header("Location:admin.php");
 ?>
 <html>

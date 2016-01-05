@@ -2,7 +2,7 @@
 <span class="clearfix"></span>
 <h1 style="margin-left: 70px;">Gestione Pagine</h1>
 <?php
-	// Messaggi di Errore successo per le azioni della gestione
+	// Messaggi di Errore/successo per le azioni della gestione
 	echo (isset($_GET['message'])) ? $_GET['message'] : null ;
 ?>
 
@@ -18,9 +18,7 @@
 </tr>
 
 <?php
-	//$action = (isset($_GET['action'])) ? $_GET['action'] : null ;
-	//$id = (isset($_GET['id'])) ? $_GET['id'] : null ;
-
+	
 	require_once ROOT.DS."controllers".DS."controller_content.php";
 	
 	$ConContentObj = new ConContent();

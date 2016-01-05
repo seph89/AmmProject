@@ -1,5 +1,6 @@
 <?php
 require_once ROOT.DS."libraries".DS."Database_Driver".DS."Mysqlimproved_Driver.php";
+
 class ModMenu {
 	var $view_param;
 	private $mysqli = null;
@@ -26,34 +27,38 @@ class ModMenu {
 			break;	
 		}
 		
-		$this->mysqli->query(); // eseguimo la query
-		return $this->mysqli->fetch('all_assoc'); // formattiamo tutti i dati in un array associativo
+		$this->mysqli->query(); // esegue la query
+		return $this->mysqli->fetch('all_assoc'); // formatta tutti i dati in un array associativo
 	}
 	
 	function selectOneMenu($id){		
-		$id = $this->mysqli->escape($id); // ripuliamo da simboli speciali
+		$id = $this->mysqli->escape($id); // ripulisce da simboli speciali
 		$this->mysqli->prepare("SELECT menu_name, menu_title FROM {$this->dbTable} WHERE menu_id='{$id}'"); // preparare una query
-		$this->mysqli->query(); // eseguimo la query
+		$this->mysqli->query(); // esegue la query
 		
-		return $this->mysqli->fetch(); // formattiamo i dati in oggetto
+		return $this->mysqli->fetch(); // formatta i dati in oggetto
 	}
-	
+        
+	//Metodo per cambiare la visibilità di un punto menu
+        
 	function visibleMenu($id,$visible){
 		if(!$id) return false;
 		if($visible > 1) return false;
 		
-		$id = $this->mysqli->escape($id); // pulliamo  id
+		$id = $this->mysqli->escape($id); 
 		
 		if($visible == 0){
 			$this->mysqli->prepare("UPDATE {$this->dbTable} SET menu_visible = '0' WHERE menu_id = '{$id}'");
 		} else {
 			$this->mysqli->prepare("UPDATE {$this->dbTable} SET menu_visible = '1' WHERE menu_id = '{$id}'");
 		}	
-		$this->mysqli->query();		// eseguimo la query
+		$this->mysqli->query();		// esegue la query
 		
 		return true;
 	}
 	
+        //Metodo per modificare un punto menu
+        
 	function editMenu($id,$menu_name,$menu_title){
 		if(!$id) return false;
 		if(!$menu_name || !$menu_title) return false;
@@ -66,24 +71,18 @@ class ModMenu {
 		
 		return true;
 	}
-	
+        
+	//Metodo per eliminare un punto menu
 	function deleteMenu($id) {
 		$this->mysqli->prepare("DELETE FROM {$this->dbTable} WHERE menu_id = '{$id}'");
 		
-		$this->mysqli->query(); // eseguimo la query
+		$this->mysqli->query(); // esegue la query
 		
 		return true;
 	}
 	
-	/**
-	*	metodo per creare un nuovo punto menu
-	*
-	*	menu_id			int			collegamento alla pagina
-	*	menu_name		string		nome del menu
-	*	menu_title		string		il titolo del menu, nel tag title=""
-	*	menu_visible	'0','1'		se il menu e visibile o no
-	*	menu_position	int			la posizione , l'ordine, del menu
-	*/
+	//Metodo per creare un nuovo punto menu
+	
 	function createMenu($menu_id, $menu_name, $menu_title, $menu_visible, $menu_position){
 		$this->mysqli->prepare("INSERT INTO {$this->dbTable} (menu_id, menu_name, menu_title, menu_visible, menu_position) 
 					VALUES ('$menu_id', '$menu_name', '$menu_title', '$menu_visible', '$menu_position')");

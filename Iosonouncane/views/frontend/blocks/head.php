@@ -7,7 +7,7 @@
 <meta type="keywords" content="<?=$auxContent['page_keywords'];?>">
 <meta type="description" content="<?=$auxContent['page_description'];?>">
 
-<!--<link rel="stylesheet" type="text/css" href="public/css/reset.css"  media="all">-->
+
 <link rel="stylesheet" type="text/css" href="public/css/style.css" media="all">
 <!-- Script per ingrandimento immagini -->
 <script type="text/javascript" src="public/js/prototype.js"></script>

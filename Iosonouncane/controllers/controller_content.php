@@ -2,6 +2,7 @@
 require_once ROOT.DS."models".DS."module_content.php";
 require_once ROOT.DS."libraries".DS."FormProcessor".DS."FormProcessor_Content.php";
 
+
 class ConContent extends ModContent {
     
     
@@ -21,7 +22,7 @@ class ConContent extends ModContent {
             $this->manageAction($action, $id);
         }
     }
-    
+    //Permette la creazione di un Contenuto
     function cCreate($post){
         if(isset($post['create'])){
             $_SESSION['errors'] = null;
@@ -36,7 +37,8 @@ class ConContent extends ModContent {
         return require_once ROOT.DS.'views'.DS.'backend'.DS.'content'.DS.'create_tpl.php';
     }
     
-    
+    //Permette di cambiare la Visibilità, 
+    //di modificare, di eliminare un Contenuto
     function manageAction($action, $id){
        switch($action){
         case('visibleYes'):
