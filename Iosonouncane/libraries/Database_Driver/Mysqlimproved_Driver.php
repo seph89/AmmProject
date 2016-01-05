@@ -10,9 +10,9 @@ class Mysqlimproved_Driver {
 	public function __construct(){
 		// Parametri di connessione
 		$host = 'localhost';
-		$user = 'root';
-		$password = 'davide';
-		$database = 'mvc';
+		$user = 'scanuAndrea';
+		$password = 'gazzella3673';
+		$database = 'amm15_scanuAndrea';
 		$charset = 'utf8';
 		
 		// connessione in construct per non chiamare il metodo
